@@ -1,0 +1,121 @@
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  padding: 48px 40px;
+  background-color: $white-bg-color;
+  transform: translateX(150%);
+  overflow-x: hidden;
+  transition: transform $animation;
+  pointer-events: none;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.nav-toggle__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+
+.mobile-nav {
+  margin-bottom: auto;
+}
+
+// .mobile-nav__list {
+// }
+
+.mobile-nav__item {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: calc(47 / 40);
+  letter-spacing: 0.02em;
+  color: $title-txt-color;
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+}
+
+// .mobile-nav__link {
+// }
+
+.mobile-nav__link-current {
+  color: $accent-color;
+}
+
+.mobile-contacts-list {
+  margin-bottom: 64px;
+}
+
+.mobile-contacts-list__item {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: calc(40 / 34);
+  letter-spacing: 0.02em;
+  color: $accent-color;
+
+  @media screen and(max-width: 479px) {
+    font-size: 24px;
+    line-height: calc(34 / 24);
+  }
+}
+
+.mobile-contacts-list__item--noaccent {
+  margin-top: 32px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: calc(28 / 24);
+  letter-spacing: 0.02em;
+  color: $primary-txt-color;
+}
+
+// .mobile-contacts-list__link {
+// }
+
+.mobile-socials {
+  display: flex;
+
+  @media screen and(max-width: 479px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+.mobile-socials__item {
+  padding: 0 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: calc(22 / 18);
+  letter-spacing: 0.02em;
+  color: $accent-color;
+
+  &:not(:last-child) {
+    @media screen and(min-width: 480px) {
+      border-right: 1px solid rgba(33, 33, 33, 0.2);
+    }
+  }
+  &:first-child {
+    padding-left: 0;
+  }
+
+  @media screen and(max-width: 479px) {
+    padding-left: 0;
+    $item: 2;
+    flex-basis: calc((100% - (#{$project-grid-gap} * (#{$item} - 1))) / #{$item});
+    text-align: left;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.2);
+  }
+}
+
+// .mobile-socials__link {
+// }

@@ -1,0 +1,49 @@
+.social {
+  @extend %flex;
+  gap: 10px;
+}
+
+.social__link {
+  @extend %flex;
+
+  width: 44px;
+  height: 44px;
+
+  color: $social-primary-color;
+  fill: currentColor;
+
+  border-radius: 50%;
+  transition: background-color $animation, fill $animation, transform $animation;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-bg-color;
+    fill: $white-txt-color;
+    transform: rotate(360deg);
+    cursor: pointer;
+  }
+}
+
+.social-group__title {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16px / 14px);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $white-txt-color;
+  text-align: center;
+
+  @media screen and(min-width: 1200px) {
+    text-align: left;
+  }
+}
+
+.social__icon--footer {
+  fill: $white-txt-color;
+}
+
+.social__link--footer {
+  background-color: $social-bg-color;
+}

@@ -1,0 +1,33 @@
+.button-filters {
+  display: inline-block;
+  padding: 6px 22px;
+  border-radius: 4px;
+
+  min-height: 38px;
+  border: none;
+
+  color: $title-txt-color;
+  background-color: $secondary-bg-color;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  letter-spacing: inherit;
+
+  transition: color $animation, background-color $animation, box-shadow $animation;
+
+  &:hover,
+  &:focus {
+    color: $white-txt-color;
+    background-color: $accent-bg-color;
+    box-shadow: $shadow-btn-filters;
+  }
+
+  @media screen and(max-width: 355px) {
+    font-size: 15px;
+    padding: 6px 18px;
+  }
+}

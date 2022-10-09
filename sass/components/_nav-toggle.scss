@@ -1,0 +1,22 @@
+.nav-toggle {
+  background-color: transparent;
+  border: none;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  transition: fill $animation;
+}
+
+.nav-toggle__icon {
+  .nav-toggle:hover &,
+  .nav-toggle:focus & {
+    fill: $accent-color;
+  }
+}

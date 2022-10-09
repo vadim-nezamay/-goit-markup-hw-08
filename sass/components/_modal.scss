@@ -1,0 +1,29 @@
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  padding: 40px;
+  width: 96%;
+
+  border-radius: 4px;
+
+  background-color: $white-bg-color;
+
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: transform $animation, opacity $animation;
+
+  @media screen and (min-width: 480px) {
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.75);
+  opacity: 0;
+}

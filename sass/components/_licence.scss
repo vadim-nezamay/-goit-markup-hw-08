@@ -1,0 +1,65 @@
+.licence {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.licence__lable {
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.03em;
+  user-select: none;
+
+  color: $primary-txt-color;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
+}
+
+.licence__checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.licence__icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 16px;
+  height: 15px;
+  border: 2px solid $title-txt-color;
+  border-radius: 4px;
+
+  background-origin: border-box;
+
+  .licence__checkbox:focus + & {
+    border-color: $accent-color;
+  }
+
+  .licence__checkbox:checked + & {
+    background-color: $accent-bg-color;
+    border-color: $accent-color;
+  }
+}
+
+.licence__link {
+  text-decoration-line: underline;
+  color: $accent-bg-color;
+}

@@ -1,0 +1,41 @@
+.project-list__item {
+  &:not(:last-child) {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and(min-width: 768px) {
+    display: flex;
+    $item: 2;
+    flex-basis: calc((100% - (#{$project-grid-gap} * (#{$item} - 1))) / #{$item});
+  }
+
+  @media screen and(min-width: 1200px) {
+    $item: 3;
+    flex-basis: calc((100% - (#{$project-grid-gap} * (#{$item} - 1))) / #{$item});
+  }
+}
+
+.project-list__link {
+  display: block;
+  transition: box-shadow $animation;
+
+  &:hover,
+  &:focus {
+    box-shadow: $shadow-btn-filters;
+  }
+
+  @media screen and(min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.project-list {
+  @media screen and(min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+}

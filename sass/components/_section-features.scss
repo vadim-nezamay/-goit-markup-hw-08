@@ -1,0 +1,71 @@
+.section-features {
+  @include section-padding;
+
+  @media screen and (min-width: 1200px) {
+    @include section-padding(94px, 94px);
+  }
+}
+
+.section-features__box {
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+
+  background-color: $secondary-bg-color;
+}
+
+.section-features__icons {
+  margin: 0 auto;
+}
+
+.section-features__subtitle {
+  margin-bottom: 10px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #212121;
+}
+
+.section-features__text {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+
+  color: $primary-txt-color;
+}
+
+.section-features__list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $project-grid-gap;
+  }
+}
+
+.section-features__item {
+  &:not(:last-child) {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .section-features__item {
+    $item: 2;
+    flex-basis: calc((100% - (#{$project-grid-gap} * (#{$item} - 1))) / #{$item});
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .section-features__item {
+    $item: 4;
+    flex-basis: calc((100% - (#{$project-grid-gap} * (#{$item} - 1))) / #{$item});
+  }
+}

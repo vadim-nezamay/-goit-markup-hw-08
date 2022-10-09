@@ -1,0 +1,27 @@
+.btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  @extend %flex;
+  width: 30px;
+  height: 30px;
+
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  background-color: $white-bg-color;
+  transition: color $animation, scale $animation, transform $animation;
+
+  &:hover,
+  &:focus {
+    transform: rotate(180deg) scale(1.15);
+    color: $accent-color;
+    cursor: pointer;
+  }
+}
+
+.btn-close__icon {
+  fill: currentColor;
+}
